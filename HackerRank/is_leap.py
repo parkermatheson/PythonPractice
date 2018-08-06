@@ -1,11 +1,21 @@
 def is_leap(year):
     leap = False
     
-    # Write your logic here
+    # A year is a leap year if:
+      # it's evenly divisible by 4 unless:
+        # the year can be evenly divided by 100, it is NOT a leap year, unless:
+          # the year is also evenly divisible by 400. Then it is a leap year.
     if year % 4 == 0:
+      if year % 100 != 0:
+        if year % 400 == 0:
+          leap = True
+        else:
+          leap = False
+      else:
+        leap = False
       leap = True
     
     return leap
 
-    year - int(input())
+    year = int(input())
     print(is_leap(year))
